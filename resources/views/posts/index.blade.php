@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MongoDB</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+@extends('posts.theme')
 
-</head>
-<body>
-    <div class="container">
+@section('content')
         <div class="card mt-5">
             <h3 class="card-header p-3">
                 MongoDB CRUD APP
@@ -37,8 +29,13 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->body }}</td>
                         <td>
+                        
+                            <form method="post" action="{{ route('post.destroy', $post->id) }}">
                             <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                                @csrf
+                                @method('DELETE')
+                                 <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -46,6 +43,4 @@
                 </table>
             </div>
         </div>
-    </div>
-</body>
-</html>
+  @endsection

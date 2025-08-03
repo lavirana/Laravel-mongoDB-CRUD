@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MongoDB</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+@extends('posts.theme')
 
-</head>
-<body>
-    <div class="container">
+@section('content')
         <div class="card mt-5">
             <h3 class="card-header p-3">
                Edit Post
@@ -42,6 +34,4 @@
             
             </div>
         </div>
-    </div>
-</body>
-</html>
+        @endsection
